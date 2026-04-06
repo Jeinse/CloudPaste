@@ -12,7 +12,7 @@ import FooterMarkdownRenderer from "./modules/admin/components/FooterMarkdownRen
 import { useGlobalMessage } from "@/composables/core/useGlobalMessage.js";
 import { useThemeMode } from "@/composables/core/useThemeMode.js";
 import AnnouncementModal from "@/modules/admin/components/AnnouncementModal.vue";
-import { IconBell, IconClose, IconComputerDesktop, IconGithub, IconHamburger, IconMoon, IconSun } from "@/components/icons";
+import { IconBell, IconClose, IconComputerDesktop, IconHamburger, IconMoon, IconSun } from "@/components/icons";
 import { Notivue, NotivueSwipe, Notification } from "notivue";
 import { cloudPasteLightTheme, cloudPasteDarkTheme } from "@/styles/notivueTheme";
 import { createLogger } from "@/utils/logger.js";
@@ -69,9 +69,6 @@ const isMobileMenuOpen = ref(false);
 
 // 环境切换器显示状态
 const showEnvSwitcher = ref(false);
-
-// GitHub 链接
-const githubUrl = "https://github.com/ling-drag0n/CloudPaste";
 
 // 检查是否为开发环境
 const isDev = import.meta.env.DEV;
@@ -194,19 +191,6 @@ const isDev = import.meta.env.DEV;
             </nav>
           </div>
           <div class="hidden sm:ml-6 sm:flex sm:items-center space-x-2">
-            <a
-              :href="githubUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-              :class="[
-                'p-2 rounded-full focus:outline-none transition-colors',
-                isDarkMode ? 'text-gray-300 hover:text-white hover:bg-gray-700' : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100',
-              ]"
-              aria-label="GitHub"
-              title="GitHub"
-            >
-              <IconGithub size="md" aria-hidden="true" />
-            </a>
 
             <button
               v-if="canShowAnnouncementEntry"
@@ -247,20 +231,7 @@ const isDev = import.meta.env.DEV;
 
           <!-- 移动端菜单按钮 -->
           <div class="flex items-center sm:hidden">
-            <a
-              :href="githubUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-              :class="[
-                'p-2 rounded-full focus:outline-none transition-colors mr-2',
-                isDarkMode ? 'text-gray-300 hover:text-white hover:bg-gray-700' : 'text-gray-500 hover:text-gray-700 hover:bg-gray-100',
-              ]"
-              aria-label="GitHub"
-              title="GitHub"
-            >
-              <IconGithub size="md" aria-hidden="true" />
-            </a>
-
+            
             <button
               v-if="canShowAnnouncementEntry"
               type="button"
